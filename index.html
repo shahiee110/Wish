@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pakistani Eid Surprise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap');
+
+        body {
+            text-align: center;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            background: url('https://source.unsplash.com/1600x900/?badshahi-masjid,lahore,mosque') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        #message {
+            font-size: 3em;
+            font-weight: bold;
+            background: rgba(0, 128, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+            border: 3px solid gold;
+        }
+        #message:hover {
+            transform: scale(1.1);
+            background: gold;
+            color: green;
+        }
+        #hiddenMessage {
+            display: none;
+            font-size: 3em;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            animation: glow 1s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 20px gold, 0 0 40px green, 0 0 60px yellow; }
+            to { text-shadow: 0 0 30px yellow, 0 0 50px green, 0 0 70px gold; }
+        }
+        .moon {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: 120px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/9/98/Crescent_Moon.png') no-repeat center center/contain;
+        }
+        .stars {
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            width: 150px;
+            height: 150px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/5/5f/Stars.png') no-repeat center center/contain;
+        }
+        .fireworks {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            background: url('https://media.giphy.com/media/3o7TKzW8b1ov9I2vHG/giphy.gif') no-repeat center center/cover;
+            display: none;
+        }
+        #audio {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="moon"></div>
+    <div class="stars"></div>
+    <div class="fireworks" id="fireworks"></div>
+
+    <div id="message" onclick="showMessage()">السلام علیکم (Click kare!)</div>
+    <div id="hiddenMessage">🎉✨ عید مبارک راحیما علی ✨🎉</div>
+
+    <audio id="audio" src="https://www.pakistan.web.pk/audio/shehnai-eid.ogg"></audio>
+
+    <script>
+        function showMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('fireworks').style.display = 'block';
+            document.getElementById('audio').play();
+            setTimeout(() => {
+                document.getElementById('fireworks').style.display = 'none';
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
