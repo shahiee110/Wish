@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: url('https://i.imgur.com/JcVFRVv.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+        }
+        #message {
+            font-size: 24px;
+            font-weight: bold;
+            padding: 15px;
+            background-color: gold;
+            color: green;
+            display: inline-block;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+        #hiddenMessage {
+            display: none;
+            font-size: 26px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 2px solid gold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>السلام علیکم</h1>
+    <p>نیچے دیے گئے بٹن پر کلک کریں</p>
+
+    <div id="message" onclick="showMessage()">یہاں کلک کریں</div>
+    <div id="hiddenMessage">🎉 عید مبارک راحیما علی 🎉</div>
+
+    <script>
+        function showMessage() {
+            document.getElementById('hiddenMessage').style.display = 'block';
+            document.getElementById('message').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
